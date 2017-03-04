@@ -1,7 +1,7 @@
 {
   "name": "5dmatwebsearch/advancesearch",
   "description": "Ajax Search for laravel ...",
-  "keywords": ["Ajax" ,"Search" , "Laravel" ,"javascript"],
+  "keywords": ["Php" ,"Search" , "Laravel" ,"full-text"],
   "license": "MIT",
   "version": "1.0",
   "type": "package",
