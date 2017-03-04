@@ -48,6 +48,7 @@ Search::search(
       "Films" ,
       ['title' , 'description'] ,
       "Drama Outback GOLDFINGER"  ,
+      ['id' , 'title'],
       ['film_id'  , 'asc'] ,
       true ,
       30
@@ -59,6 +60,7 @@ Search::search(
       "Films" ,
       ['title' , 'description'] ,
       "Drama Outback GOLDFINGER"  ,
+      ['id' , 'title'],
      'film_id'  
 )
 ```
