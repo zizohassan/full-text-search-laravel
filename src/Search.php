@@ -21,6 +21,7 @@ class Search
     protected $class;
     protected $type;
     protected $order;
+    protected $select;
 
     /***
      * @param $model
@@ -32,13 +33,14 @@ class Search
      * @return string
      */
 
-    public function search($model , $fields , $value = "" , $orderBy = null , $responseType = true , $limit = 10){
+    public function search($model , $fields , $value = "" , $select = null ,  $orderBy = null , $responseType = true , $limit = 10){
         $this->model = ucfirst($model);
         $this->fields = $fields;
         $this->limit  = $limit;
         $this->value = $value;
         $this->type = $responseType;
         $this->order = $orderBy;
+        $this->select = $select;
         return $this->init();
     }
 
@@ -90,6 +92,15 @@ class Search
     }
 
     /***
+     * @return string
+     */
+    protected function checkSelect(){
+        return $this->select = is_array($this->select) ? $this->select :  [$this->select];
+    }
+
+
+
+    /***
      * @param $fields
      * @return string
      */
@@ -128,6 +139,11 @@ class Search
     protected function searchProductsFulltext()
     {
         $query  =  $this->class->whereRaw("match(".$this->fields.") against ('/$this->value/' IN NATURAL LANGUAGE MODE)");
+
+        if($this->select != null){
+            $query = $query->select($this->checkSelect());
+        }
+
         if($this->order != null){
            $order = $this->getOrderBy();
            $query = $query->orderBy($order[0] , $order[1]);
