@@ -1,0 +1,25 @@
+{
+  "name": "5dmatwebsearch/advancesearch",
+  "description": "Ajax Search for laravel ...",
+  "keywords": ["Ajax" ,"Search" , "Laravel" ,"javascript"],
+  "license": "MIT",
+  "version": "1.0",
+  "type": "package",
+  "authors":[
+    {
+      "name" : "5dmatweb Team",
+      "email" : "admin@5dmat-web.com",
+      "homepage" : "https://5dmat-web.com",
+      "role" : "Developer"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "AdvanceSearch\\AdvanceSearchProvider\\": "src/"
+    }
+  }
+, "minimum-stability": "dev"
+}
