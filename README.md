@@ -31,12 +31,13 @@ example
 #search
 now you can use the search function 
 ```php
-  Search::search(table , feilds, searchText  ,  order , pagination , limit)
+  Search::search(table , feilds, searchText  ,select , order , pagination , limit)
 
 ```
 table = the table name <br>
 fileds = the fileds you can add one field like title or more than one like this ['title' , 'description']<br>
 searchText = the text you look for<br>
+select = the fields you want to return with you can return with one field like this title or more then one like ['title' , 'description']<br>
 order = you can pass only the order field like this id or you can pass the field and the way like this ['id' , 'desc']<br>
 pagination = true if you want false if not if you not pass this , pakage will paginate by default<br>
 limit = how many result you want 10 by default<br>
