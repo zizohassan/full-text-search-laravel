@@ -71,6 +71,7 @@ Search::search(
       "Films" ,
       ['title' , 'description'] ,
       "Drama Outback GOLDFINGER"  ,
+      ['id' , 'title'],
      'film_id',
      false
 )->where('film_id' , 10)->get()
