@@ -3,7 +3,7 @@ full text search in laravel with more than one field
 
 #install
 ```
-  composer require 5dmatwebsearch/advancesearch--dev:master
+  composer require 5dmatwebsearch/advancesearch:dev-master
 ```
 #add service provider
 ```
