@@ -31,10 +31,10 @@ example
 #search
 now you can use the search function 
 ```php
-  Search::search(table , feilds, searchText  ,select , order , pagination , limit)
+  Search::search(modelName , feilds, searchText  ,select , order , pagination , limit)
 
 ```
-table = the table name <br>
+modelName = the table name <br>
 fileds = the fileds you can add one field like title or more than one like this ['title' , 'description']<br>
 searchText = the text you look for<br>
 select = the fields you want to return with you can return with one field like this title or more then one like ['title' , 'description']<br>
@@ -48,7 +48,7 @@ Search::search(
       "Films" ,
       ['title' , 'description'] ,
       "Drama Outback GOLDFINGER"  ,
-      ['id' , 'title'],
+      ['modelName' , 'title', 'description'],
       ['film_id'  , 'asc'] ,
       true ,
       30
@@ -60,7 +60,7 @@ Search::search(
       "Films" ,
       ['title' , 'description'] ,
       "Drama Outback GOLDFINGER"  ,
-      ['id' , 'title'],
+      ['id' , 'title', 'description'],
      'film_id'  
 )
 ```
@@ -71,9 +71,9 @@ Search::search(
       "Films" ,
       ['title' , 'description'] ,
       "Drama Outback GOLDFINGER"  ,
-      ['id' , 'title'],
-     'film_id',
-     false
+      ['film_id' , 'title', 'description'],
+      'film_id',
+      false
 )->where('film_id' , 10)->get()
 ```
 
