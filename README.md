@@ -31,7 +31,7 @@ Example
 # search
 You can now use the search function 
 ```php
-  Search::search(modelName , feilds, searchText  ,select , order , pagination , limit)
+  Search::search(modelName , fields, searchText  ,select , order , pagination , limit)
 
 ```
 modelName = The table name <br>
