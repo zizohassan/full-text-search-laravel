@@ -38,11 +38,11 @@ class MakeIndexCommand extends Command
      */
     public function handle()
     {
-        $this->info(" Develop By 5dmat-web.com team . ");
+        $this->info("Developed by the 5dmat-web.com team ");
         $this->info("Please Wait ...");
-        $this->info("Index Fields ".$this->argument('fields')." in table ".$this->argument('table')."  ...");
+        $this->info("Indexing fields ".$this->argument('fields')." in table ".$this->argument('table')"  ...");
         DB::statement("ALTER TABLE {$this->argument('table')}  ADD FULLTEXT ({$this->argument('fields')})");
-        $this->info("Done Enjoy ...");
+        $this->info("Done, Enjoy!");
         return;
     }
 }
