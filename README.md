@@ -1,22 +1,24 @@
 # full-text-search-laravel
-full text search in laravel with single or multiple fields
 
-# installation
+## Description
+Full text search in laravel on single or multiple fields
+
+## Installation
 ```
   composer require 5dmatwebsearch/advancesearch:dev-master
 ```
-# add service provider (in config/app.php -> 'providers')
+## Add service provider (in config/app.php -> 'providers')
 ```
    AdvanceSearch\AdvanceSearchProvider\AdvanceSearchProvider::class,
 ```
 
-# add aliases (in config/app.php -> 'alisases')
+## Add aliases (in config/app.php -> 'alisases')
 ```
    'Search' => AdvanceSearch\AdvanceSearchProvider\Facades\SearchFacades::class,
 ```
 
-# add index
-add index to fields
+## Add index
+Add index to fields
 ```
   php artisan index:table table fields
 ```
@@ -28,7 +30,7 @@ Example
   php artisan index:table films title,description
 ```
 
-# search
+## Search
 You can now use the search function 
 ```php
   Search::search(modelName , fields, searchText  ,select , order , pagination , limit)
