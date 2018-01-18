@@ -12,7 +12,7 @@ Full text search in laravel on single or multiple fields
    AdvanceSearch\AdvanceSearchProvider\AdvanceSearchProvider::class,
 ```
 
-## Add aliases (in config/app.php -> 'alisases')
+## Add aliases (in config/app.php -> 'aliases')
 ```
    'Search' => AdvanceSearch\AdvanceSearchProvider\Facades\SearchFacades::class,
 ```
