@@ -1,48 +1,50 @@
 # full-text-search-laravel
-full text search in laravel with more than one field
 
-# install
+## Description
+Full text search in laravel on single or multiple fields
+
+## Installation
 ```
   composer require 5dmatwebsearch/advancesearch:dev-master
 ```
-# add service provider
+## Add service provider (in config/app.php -> 'providers')
 ```
    AdvanceSearch\AdvanceSearchProvider\AdvanceSearchProvider::class,
 ```
 
-# add aliases
+## Add aliases (in config/app.php -> 'aliases')
 ```
    'Search' => AdvanceSearch\AdvanceSearchProvider\Facades\SearchFacades::class,
 ```
 
-# add index
-add index to fields
+## Add index
+Add index to fields
 ```
   php artisan index:table table fields
 ```
 table = the table name <br>
-fileds = the fileds you can add one field or more than one like this title,description,tags
+fields = the fields you can add. One or more fields can be added like this: title,description,tags
 
-example
+Example
 ```
   php artisan index:table films title,description
 ```
 
-# search
-now you can use the search function 
+## Search
+You can now use the search function 
 ```php
-  Search::search(modelName , feilds, searchText  ,select , order , pagination , limit)
+  Search::search(modelName , fields, searchText  ,select , order , pagination , limit)
 
 ```
-modelName = the table name <br>
-fileds = the fileds you can add one field like title or more than one like this ['title' , 'description']<br>
-searchText = the text you look for<br>
-select = the fields you want to return with you can return with one field like this title or more then one like ['title' , 'description']<br>
-order = you can pass only the order field like this id or you can pass the field and the way like this ['id' , 'desc']<br>
-pagination = true if you want false if not if you not pass this , pakage will paginate by default<br>
-limit = how many result you want 10 by default<br>
+modelName = The table name <br>
+fields = The fields you can add title,description,tags <br>
+searchText = The text you're looking for <br>
+select = The fields you want a return from. You can return with one field like this: title. Or more than one like ['title' , 'description']<br>
+order = You can pass a single order field like this: id. Or you can pass the field and the way like this ['id' , 'desc'] <br>
+pagination = True if you want pagination to be enabled, false if not. The package will paginate by default <br>
+limit = The amount of results you want returned. (10 by default)<br>
 
-example with pagination
+First example with pagination
 ```php
 Search::search(
       "Films" ,
@@ -54,7 +56,7 @@ Search::search(
       30
 )
 ```
-other example with pagination
+Second example with pagination
 ```php
 Search::search(
       "Films" ,
@@ -64,7 +66,7 @@ Search::search(
      'film_id'  
 )
 ```
-example without pagination
+Example without pagination
 
 ```php
 Search::search(
