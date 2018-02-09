@@ -40,7 +40,7 @@ class MakeIndexCommand extends Command
     {
         $this->info("Developed by the 5dmat-web.com team ");
         $this->info("Please Wait ...");
-        $this->info("Indexing fields ".$this->argument('fields')." in table ".$this->argument('table')"  ...");
+        $this->info("Indexing fields ".$this->argument('fields')." in table ".$this->argument('table')."  ...");
         DB::statement("ALTER TABLE {$this->argument('table')}  ADD FULLTEXT ({$this->argument('fields')})");
         $this->info("Done, Enjoy!");
         return;
